@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <style>
+    .barraNormal {
+      background-color: #EFA221;
+      color: #fff;
+      height: 38px;
+      box-shadow: #EFA221 4px 4px 4px 0px;
+    }
+
+    .barraFlotante {
+      background-color: #0C99D5;
+      bottom: 0;
+      color: #fff;
+      height: 38px;
+      left: 0;
+      position: fixed;
+      right: 0;
+      top: 0;
+      z-index: 1;
+      box-shadow: #0C99D5 4px 4px 4px 0px;
+      margin-left: 6px;
+      margin-right: 6px;
+    }
+
+    .container {
+      margin-top: 80%;
+    }
+  </style>
+
+  <script>
+    $(window).scroll(function () {
+      console.log($(window).scrollTop());
+      //cuando detecte un scroll mayor a 150 realizará el cambio de barras
+      if ($(window).scrollTop() > 150) {
+        //añadimos clase barraFlotante y eliminamos la clase barraNormal
+        $('.menu').addClass('barraFlotante');
+        $('.menu').removeClass('barraNormal');
+      }
+      else {
+        //borramos la clase barraFlotante y añadimos la clase barraNormal
+        $('.menu').removeClass('barraFlotante');
+        $('.menu').addClass('barraNormal');
+      }
+    });
+  </script>
+</head>
+
+<body>
+
+  <div class="menu barraNormal">
+    <center>
+      Menu Superior;
+    </center>
+  </div>
+
+  <div class="container">
+    Hola
+  </div>
+
+</body>
+
+</html>
